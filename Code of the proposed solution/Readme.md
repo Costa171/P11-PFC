@@ -29,6 +29,7 @@ Sending data to the server for encryption and receiving encrypted data and keys.
 Decrypting data using the received keys.
 Measuring client-side processing times and displaying results.
 </p>
+
 ### Cryptographic Functions (functions.py)
 Contains implementations of various cryptographic algorithms used in the project:
 1. AES-256 (CBC mode), AES-CTR encryption/decryption.
