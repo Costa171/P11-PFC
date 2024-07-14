@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexStyle.css')}}">
+</head>
+<body>
+    <div class="content-wrapper">
+    <h1><u>Speed Test with Encryption</u></h1>
+    <p>Select one of the options described below and choose a packet size and click [Test].</p>
+    <form action="/test_speed" method="POST">
+        <ul>
+            <li><b>Guest:</b> encrypts only once with AES-256.</li>
+            <li><b>Basic:</b> encrypts twice, using AES-256, AES-CTR.</li>
+            <li><b>Advanced:</b> encrypts three times, using AES-256, AES-CTR, HMAC-SHA256.</li>
+            <li><b>Admin:</b> encrypts four times, using AES-256, AES-CTR, HMAC-SHA256, XChacha20.</li>
+        </ul>
+        <label for="level">Select a test type:</label>
+        <select id="level" name="test_type">
+            <option value="Guest">Guest</option>
+            <option value="Basic">Basic</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Admin">Admin</option>
+        </select>
+    
+        <input type="number" id="custom" name="custom_size" min="1" max="10000" value="1" style="width: 100px; height: 20px"> 
+        <select id="unit" name="unit">
+            <option value="MB">MB</option>
+            <option value="KB">KB</option>
+        </select>
+        <br><br>
+        <label for="packet_quantity">Packet Quantity:</label>
+        <input type="number" id="packet_quantity" name="packet_quantity" min="1" max="100000" value="1" style="width: 100px; height: 20px"> 
+        <br><br>
+        <input type="submit" value="Test">
+    </form>
+    </div>
+</body>
+</html>

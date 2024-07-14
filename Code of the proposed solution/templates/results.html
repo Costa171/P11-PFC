@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Results</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='resultsStyle.css')}}">
+</head>
+<body>
+<div class="content-wrapper">
+<h1>Speed Test Results</h1>
+
+<h2>Encryption and Decryption Time</h2>
+<p>Level used: {{ level_used }}</p>
+{% if level_used == 'Guest' %}
+    <p>Algorithm used: AES-256</p>
+{% elif level_used == 'Basic' %}
+    <p>Algorithms used: AES-256, AES-CTR</p>
+{% elif level_used == 'Advanced' %}
+    <p>Algorithms used: AES-256, AES-CTR, HMAC-SHA256</p>
+{% elif level_used == 'Admin' %}
+    <p>Algorithms used: AES-256, AES-CTR, HMAC-SHA256, XChacha20</p>
+{% endif %}
+
+{% if value_unit == 'MB' %}
+    <p>Packet size used: {{custom_size}} MB</p>
+{% elif value_unit == 'KB' %}
+    <p>Packet size used: {{custom_size}} KB</p>
+{% endif %}
+<p>Packet Quantity: {{packet_quantity}} </p>
+<p>Encryption time: {{ encrypt_time }} seconds</p>
+<p>Decryption time: {{ decrypt_time }} seconds</p>
+<p>Server process time: {{server_time}} seconds</p>
+<p>Client process time: {{client_time}} seconds</p>
+<p>Total process time: {{total_time}} seconds</p>
+</div>
+
+</body>
+</html>
