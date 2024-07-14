@@ -1,6 +1,7 @@
 # Secure Data Transmission with Flask and Crypto
-
+<p align="justify">
 This project demonstrates a secure data transmission application using Flask and various cryptographic algorithms. The application allows clients to send data to a server, which encrypts it based on the selected encryption level, and sends it back to the client for decryption. The server and client communicate over HTTP using JSON for data exchange.
+</p>
 
 ## Features
 1. Encryption Levels: Supports different encryption levels (Guest, Basic, Advanced, Admin) with increasing complexity.
@@ -12,21 +13,22 @@ This project demonstrates a secure data transmission application using Flask and
 ## Components
 ### Server (server.py)
 The server side is implemented in Flask and performs the following tasks:
-
+<p align="justify">
 Receives data from clients via HTTP POST requests.
 Generates random keys and nonce for encryption.
 Encrypts data based on the selected encryption level.
 Calculates encryption times and server processing times.
 Sends back encrypted data along with encryption keys.
+</p>
 
 ### Client (client.py)
 The client side is implemented in Flask and involves:
-
+<p align="justify">
 Accepting user input for encryption level, data size, unit, and packet quantity.
 Sending data to the server for encryption and receiving encrypted data and keys.
 Decrypting data using the received keys.
 Measuring client-side processing times and displaying results.
-
+</p>
 ### Cryptographic Functions (functions.py)
 Contains implementations of various cryptographic algorithms used in the project:
 1. AES-256 (CBC mode), AES-CTR encryption/decryption.
