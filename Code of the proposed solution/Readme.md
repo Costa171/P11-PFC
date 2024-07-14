@@ -5,7 +5,7 @@ This project demonstrates a secure data transmission application using Flask and
 
 ## Features
 1. Encryption Levels: Supports different encryption levels (Guest, Basic, Advanced, Admin) with increasing complexity.
-2. Encryption Algorithms: Utilizes AES-256, AES-CTR, and XChaCha20 algorithms for encryption and decryption.
+2. Encryption Algorithms: Utilizes AES-256 (CBC mode), AES-CTR, and XChaCha20 algorithms for encryption and decryption.
 3. Data Integrity: Includes HMAC-SHA-256 for data integrity verification.
 4. Memory Management: Uses Python's gc module for memory management to ensure efficient resource utilization.
 5. Performance Testing: Measures encryption/decryption times and overall processing times for performance evaluation.
